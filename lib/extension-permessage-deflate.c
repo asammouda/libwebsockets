@@ -305,7 +305,7 @@ lws_extension_callback_pm_deflate(struct lws_context *context,
 		lwsl_ext("  %s: RX leaving with new effbuff len %d, "
 			 "ret %d, rx.avail_in=%d, TOTAL RX since FIN %ld\n",
 			 __func__, eff_buf->token_len, priv->rx_held_valid,
-			 priv->rx.avail_in, priv->count_rx_between_fin);
+			 priv->rx.avail_in,(unsigned long) priv->count_rx_between_fin);
 
 		if (was_fin) {
 			priv->count_rx_between_fin = 0;
